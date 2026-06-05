@@ -25,10 +25,13 @@ class atm:
             self.withdraw()
             self.menu()
         elif user_choice==5:
-            
-            pass
+            self.deposit()
+            self.menu()
         else:
             exit()
+
+    #atm methods
+
     def create_pin(self):
         atm_pin=int(input("ENTER THE PIN:"))
         self.pin=atm_pin
@@ -57,6 +60,12 @@ class atm:
             else:
                 self.balance=self.balance-withdraw1
                 print("after withdrawal your balance=",self.balance)
+    def deposit(self):
+        pin3=int(input("enter your pin="))
+        if pin3==self.pin:
+            deposit=int(input("enter your deposit amount="))
+            self.balance=self.balance+deposit
+            print("after deposit your balance=",self.balance)
         
 
         
