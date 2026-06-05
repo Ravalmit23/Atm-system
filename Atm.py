@@ -32,8 +32,10 @@ class atm:
 
     def update_pin(self):
         pin1=int(input("ENTER YOUR OLD PIN:"))
-        if pin1==self.atm_pin:
-            pass
+        if pin1==self.pin:
+            new_pin=int(input("ENTER YOUR NEW PIN:"))
+            self.pin=new_pin
+            print("PIN UPDATED SUCCESSFULLY")
 
         
         
