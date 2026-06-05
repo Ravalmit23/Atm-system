@@ -1,7 +1,7 @@
 class atm:
     def __init__(self):
-        pin=''
-        balance=10000
+        self.pin=''
+        self.balance=10000
     def menu(self):
         print('''
         PRESS 1:CREATE PIN
@@ -11,17 +11,21 @@ class atm:
         PRESS 5:DEPOSIT AMOUNT
         PRESS 6:EXIT
               ''')
-        user_choice=input("enter your choice:")
-        if user_choice=='1':
+        user_choice=int(input("enter your choice:"))
+        if user_choice==1:
             self.create_pin()
             self.menu()
-        elif user_choice=='2':
+        elif user_choice==2:
             self.update_pin()
-        elif user_choice=='3':
-            pass
-        elif user_choice=='4':
-            pass
-        elif user_choice=='5':
+            self.menu()
+        elif user_choice==3:
+            self.check_balance()
+            self.menu()
+        elif user_choice==4:
+            self.withdraw()
+            self.menu()
+        elif user_choice==5:
+            
             pass
         else:
             exit()
@@ -38,6 +42,22 @@ class atm:
             print("PIN UPDATED SUCCESSFULLY")
         else:
             print("OOPS! ENTER VALID PIN")
+    def check_balance(self):
+        atm_pin=int(input("enter your pin:"))
+        if atm_pin==self.pin:
+            print("YOUR BALANCE=",self.balance)
+        else:
+            print("you enter wrong pin")
+    def withdraw(self):
+        pin2=int(input("enter your pin="))
+        if pin2==self.pin:
+            withdraw1=int(input("enter your withdraw amount="))
+            if withdraw1>self.balance:                      #nested if 
+                print("unsufficient balance")
+            else:
+                self.balance=self.balance-withdraw1
+                print("after withdrawal your balance=",self.balance)
+        
 
         
         
