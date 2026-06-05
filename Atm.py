@@ -36,6 +36,8 @@ class atm:
             new_pin=int(input("ENTER YOUR NEW PIN:"))
             self.pin=new_pin
             print("PIN UPDATED SUCCESSFULLY")
+        else:
+            print("OOPS! ENTER VALID PIN")
 
         
         
